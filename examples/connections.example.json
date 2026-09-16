@@ -1,0 +1,8 @@
+{
+  "dx_default": {
+    "conn_type": "dx",
+    "extra": {
+      "api_key": "YOUR_DX_API_KEY"
+    }
+  }
+}
