@@ -17,7 +17,7 @@ Documentation for the **Riverbed Data Express (DX)** Airflow provider.
 | Package | Tested version |
 |---------|----------------|
 | PyPI name | `apache-airflow-providers-dx` |
-| Provider version | **1.0.0** |
+| Provider version | **1.0.1** |
 | Python module | `airflow.providers.dx` |
 | Connection type | `dx` |
 | Default connection id | `dx_default` |

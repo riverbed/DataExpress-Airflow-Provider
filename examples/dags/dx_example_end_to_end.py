@@ -45,10 +45,8 @@ SOURCE_LOCATION = {
     "access_type": "S3",
     "end_point": "https://your-bucket.compat.objectstorage.region.oci.customer-oci.com",
     "path": "your-bucket/source/path",
-    "credentials": {
-        "access_key": "YOUR_OCI_ACCESS_KEY",
-        "secret_key": "YOUR_OCI_SECRET_KEY",
-    },
+    "access_key": "YOUR_OCI_ACCESS_KEY",
+    "secret_key": "YOUR_OCI_SECRET_KEY"
 }
 
 DEST_LOCATION = {
@@ -59,10 +57,8 @@ DEST_LOCATION = {
     "access_type": "S3",
     "end_point": "https://your-bucket.compat.objectstorage.region.oci.customer-oci.com",
     "path": "your-bucket/dest/path",
-    "credentials": {
-        "access_key": "YOUR_OCI_ACCESS_KEY",
-        "secret_key": "YOUR_OCI_SECRET_KEY",
-    },
+    "access_key": "YOUR_OCI_ACCESS_KEY",
+    "secret_key": "YOUR_OCI_SECRET_KEY"
 }
 
 with DAG(

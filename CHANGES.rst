@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0.1
+-----
+
+* README: use absolute GitHub URLs for documentation and changelog links (PyPI-safe).
+* Package metadata: ``authors``, ``[project.urls]`` for GitHub repo.
+
 1.0.0
 -----
 

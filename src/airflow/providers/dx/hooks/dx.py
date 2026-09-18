@@ -76,7 +76,7 @@ class DxHook(BaseHook):
                 "extra": json.dumps(
                     {
                         "api_key": "your-api-key",
-                        "base_url": "https://api.dx-dev.riverbed.com",
+                        "base_url": "https://api.dx.riverbed.com",
                     },
                     indent=2,
                 ),

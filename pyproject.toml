@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "apache-airflow-providers-dx"
-version = "1.0.0"
+version = "1.0.1"
 description = "Apache Airflow provider for Riverbed Data Express (locations, profiles, transfer jobs)"
-readme = "README.rst"
+readme = "README.pypi.rst"  # PyPI long description (no logo). GitHub uses README.md.
 license = { text = "Apache-2.0" }
 authors = [
     { name = "Renjith Vadakkekkara", email = "renjith.vadakkekkara@riverbed.com" },

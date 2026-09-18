@@ -88,7 +88,7 @@ Deferrable sensors require Triggerer.
 | Package | Version | Notes |
 |---------|---------|-------|
 | `apache-airflow` | **3.2.2+** (<3.3) | Core platform |
-| `apache-airflow-providers-dx` | **1.0.0** | **Only additional provider package required** |
+| `apache-airflow-providers-dx` | **1.0.1** | **Only additional provider package required** |
 | Python | **3.13** | Runtime |
 | `requests` | ≥2.28 | Pulled in by this provider |
 
@@ -226,30 +226,10 @@ Full pipeline: [`examples/dags/dx_example_end_to_end.py`](../examples/dags/dx_ex
 | Profile from existing locations | `DxProfileCreateOperator` only |
 | Profile + job from existing locations | `DxProfileCreateOperator` → `DxJobCreateOperator` → `DxJobStatusSensor` |
 
-## Multi-environment
-
-Use different connection ids — same DAG code:
-
-| Environment | Connection id |
-|-------------|---------------|
-| Dev | `dx_dev` |
-| Staging | `dx_staging` |
-| Prod | `dx_prod` |
-
-Pass `dx_conn_id="dx_prod"` on operators or use Airflow Variables for the conn id name (not the secret).
-
 ## Storage credentials (OCI/S3)
 
 Bucket access keys belong in **location payload** or external config loaded by a `@task` — not in the
 Airflow Connection. The DX Connection authenticates **to DX APIs** only.
-
-## Troubleshooting
-
-| Symptom | Fix |
-|---------|-----|
-| `CERTIFICATE_VERIFY_FAILED` | `extra.verify_ssl: false` (staging) or install CA |
-| `Auth: HTTP 401` | Wrong or revoked `api_key`; check Connection |
-| Duplicate location on rerun | Use unique paths or existing location ids |
 
 ## Related
 

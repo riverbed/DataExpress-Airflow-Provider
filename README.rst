@@ -15,9 +15,14 @@
    specific language governing permissions and limitations
    under the License.
 
+.. image:: docs/images/new_dx_logo.png
+   :alt: Riverbed Data Express
+   :target: https://github.com/riverbed/DataExpress-Airflow-Provider
+   :width: 320px
+
 Package ``apache-airflow-providers-dx``
 
-Release: ``1.0.0``
+Release: ``1.0.1``
 
 
 `Riverbed Data Express (DX) <https://github.com/riverbed/DataExpress-Airflow-Provider>`__
@@ -29,7 +34,7 @@ This is a provider package for ``dx`` provider. All classes for this provider pa
 are in ``airflow.providers.dx`` python package.
 
 You can find package information and changelog for the provider in the
-`documentation <docs/index.md>`_.
+`documentation <https://github.com/riverbed/DataExpress-Airflow-Provider/blob/main/docs/index.md>`_.
 
 Installation
 ------------
@@ -47,7 +52,7 @@ Requirements
 PIP package                                Version required
 ========================================== ==================
 ``apache-airflow``                         ``>=3.2.2,<3.3.0``
-``apache-airflow-providers-dx``            ``1.0.0`` (this package)
+``apache-airflow-providers-dx``            ``1.0.1`` (this package)
 ``requests``                               ``>=2.28.0``
 ========================================== ==================
 
@@ -55,4 +60,4 @@ No other Airflow provider packages are required for DX DAGs (only ``airflow.prov
 Run an Airflow **Triggerer** process if you use deferrable DX sensors.
 
 The changelog for the provider package can be found in the
-`changelog <CHANGES.rst>`_.
+`changelog <https://github.com/riverbed/DataExpress-Airflow-Provider/blob/main/CHANGES.rst>`_.
