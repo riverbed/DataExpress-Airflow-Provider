@@ -2,10 +2,6 @@
 
 The **dx** connection type enables orchestration of Riverbed Data Express (Profiles and Jobs APIs).
 
-Follows the same pattern as official providers (e.g.
-[Jira Connection](https://airflow.apache.org/docs/apache-airflow-providers-atlassian-jira/stable/connections.html)):
-credentials live on the Connection; DAGs reference a connection id only.
-
 ## Default Connection IDs
 
 `DxHook` and all DX operators/sensors use parameter **`dx_conn_id`**. Default value: **`dx_default`**.
@@ -16,9 +12,6 @@ Default SaaS gateway: **`https://api.dx.riverbed.com`**.
 
 API calls use **`{base_url}/api/v1/...`** (e.g. `POST …/api/v1/locations`, `GET …/api/v1/jobs/{id}`).
 No `/api/profiles` or `/api/jobs` prefix on the host.
-
-Users set `extra.api_key`. Other DX environments: set Extra `base_url`
-(or `profiles_base_url` / `jobs_base_url` for split deployments). Host field stays empty.
 
 ## Configuring the Connection
 
@@ -45,10 +38,6 @@ JSON object. Common fields:
 | Extra field | Required | Description |
 |-------------|----------|-------------|
 | `api_key` | Yes | Bearer token sent on every DX request |
-| `base_url` | No | DX API host root (default `https://api.dx.riverbed.com`); paths are `/api/v1/*` |
-| `verify_ssl` | No | Verify TLS certificates (default `true`; set `false` for self-signed staging) |
-
-Split services (no single gateway): `profiles_base_url`, `jobs_base_url`.
 
 See [Auth](../auth-modes.md).
 
@@ -71,9 +60,9 @@ See [Auth](../auth-modes.md).
 }
 ```
 
-`verify_ssl` optional — omit for default `true`; set `false` only for self-signed staging TLS.
+`verify_ssl` optional — omit for default `true`; set `false` only for self-signed TLS.
 
-**JSON import file:** [`examples/connections.example.json`](../examples/connections.example.json)
+**JSON import file:** [`examples/connections.example.json`](../../examples/connections.example.json)
 
 **Environment variable:**
 
@@ -93,7 +82,6 @@ Expected output:
 
 ## Security
 
-- Do **not** commit real API keys to git.
 - Use Airflow [Secrets Backend](https://airflow.apache.org/docs/apache-airflow/stable/security/secrets/secrets-backend/index.html) or `AIRFLOW_CONN_*` env vars in production.
 
 ## Related

@@ -19,7 +19,7 @@ Initial release.
   Override per environment with Connection Extra ``base_url`` (or ``profiles_base_url`` /
   ``jobs_base_url``). Legacy prefixed URLs are normalized automatically.
 * Auth: ``extra.api_key`` sent as ``Authorization: Bearer`` on every request.
-  ``extra.verify_ssl`` for self-signed staging TLS.
+  ``extra.verify_ssl`` for self-signed TLS.
 * Operators: location, profile, and job create.
 * Sensors: location status and job status (deferrable).
 * Triggers: ``DxJobStatusTrigger``, ``DxLocationStatusTrigger``.

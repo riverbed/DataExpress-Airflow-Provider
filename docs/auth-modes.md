@@ -1,13 +1,13 @@
 # Auth
 
 DX authenticates with a **long-lived API token**. `DxHook` reads it from the Airflow
-Connection and sends it on **every** Profiles/Jobs request as
-`Authorization: Bearer <token>`. No login, refresh, or sho-auth calls.
+Connection and sends it on **every API call** as
+`Authorization: Bearer <token>`.
 
 ```
 Connection extra.api_key
   → Authorization: Bearer <api_key>
-  → Profiles / Jobs API calls
+  → every API call
 ```
 
 ## Connection setup
@@ -24,10 +24,10 @@ Never put tokens in DAG `params`, Variables, or source control.
 
 | Method | Use |
 |--------|-----|
-| Airflow Connection UI | Local dev |
-| `airflow connections import` | Dev/staging templates |
-| `AIRFLOW_CONN_DX_DEFAULT` env | Docker / K8s |
-| Secrets backend (Vault, AWS SM) | Production |
+| Airflow Connection UI | Manual setup |
+| `airflow connections import` | JSON connection templates |
+| `AIRFLOW_CONN_DX_DEFAULT` env | Docker / Kubernetes |
+| Secrets backend (Vault, AWS SM) | Recommended for production |
 
 ## Related
 
